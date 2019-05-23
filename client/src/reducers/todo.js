@@ -6,7 +6,7 @@ const initialState = {
   loading: true
 }
 
-export default function(state = initialState, action) {
+export default function (state = initialState, action) {
   const { type, payload } = action
   switch (type) {
     case GET_TODOS:
@@ -14,11 +14,11 @@ export default function(state = initialState, action) {
       return { ...state, todos: Object.values(payload.todos), loading: false }
 
     case ADD_TODO:
-      const todos = [ ...state.todos, payload.todo ]
+      const todos = [...state.todos, payload.todo]
       return { ...state, todos, loading: false }
 
     case TODO_UPDATED:
-      const updatedTodos = [ ...state.todos ]
+      const updatedTodos = [...state.todos]
       const index = updatedTodos.findIndex(t => t.id === payload.todo.id)
       updatedTodos[index] = payload.todo
       return { ...state, todos: updatedTodos, todo: null, loading: false }
@@ -31,7 +31,7 @@ export default function(state = initialState, action) {
 
     case TOGGLE_TODO_COMPLETED:
       const todoIndex = state.todos.findIndex(t => t.id === payload.id)
-      const newTodos = [ ...state.todos ]
+      const newTodos = [...state.todos]
       newTodos[todoIndex].isCompleted = !newTodos[todoIndex].isCompleted
       return { ...state, todos: newTodos, todo: null, loading: false }
 
