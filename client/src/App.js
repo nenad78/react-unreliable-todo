@@ -4,9 +4,10 @@ import { Provider } from 'react-redux'
 import './App.css';
 
 import store from './store'
-
+import Alert from './components/layout/Alert'
 import Navbar from './components/layout/Navbar'
 import Landing from './components/layout/Landing'
+import Sessions from './components/sessions/Sessions'
 
 const App = () => {
   return (
@@ -16,9 +17,9 @@ const App = () => {
           <Navbar />
           <Route exact path="/" component={Landing} />
           <section className="container">
-            
+            <Alert />
             <Switch>
-              
+              <Route exact path="/sessions" component={Sessions} />
             </Switch>
           </section>
         </Fragment>
