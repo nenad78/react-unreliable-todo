@@ -1,0 +1,23 @@
+{
+  "name": "frontend-task-be",
+  "version": "1.0.0",
+  "description": "Task for people wanting to join ROI Hunter's frontend",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "1.18.3",
+    "express": "4.16.4",
+    "nodemon": "1.18.10",
+    "uuid": "3.3.2"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0"
+  }
+}
