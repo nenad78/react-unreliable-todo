@@ -7,7 +7,9 @@ import store from './store'
 import Alert from './components/layout/Alert'
 import Navbar from './components/layout/Navbar'
 import Landing from './components/layout/Landing'
+import Todos from './components/todos/Todos'
 import Sessions from './components/sessions/Sessions'
+import PrivateRoute from './components/routing/PrivateRoute'
 
 import { loadSession } from './actions/session'
 import setSessionId from './utils/setSession'
@@ -30,6 +32,7 @@ const App = () => {
           <section className="container">
             <Alert />
             <Switch>
+              <PrivateRoute exact path="/todos" component={Todos} />
               <Route exact path="/sessions" component={Sessions} />
             </Switch>
           </section>

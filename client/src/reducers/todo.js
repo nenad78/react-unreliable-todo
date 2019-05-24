@@ -11,7 +11,7 @@ export default function (state = initialState, action) {
   switch (type) {
     case GET_TODOS:
     case UPDATE_TODOS:
-      return { ...state, todos: Object.values(payload.todos), loading: false }
+      return { ...state, todos: Object.values(payload.todos), todo: null, loading: false }
 
     case ADD_TODO:
       const todos = [...state.todos, payload.todo]
@@ -27,7 +27,7 @@ export default function (state = initialState, action) {
       return { ...state, todo: { ...state.todos.find(t => t.id === payload.id) } }
 
     case TODOS_ERROR:
-      return { ...state, loading: false }
+      return { ...state, todo: null, loading: false }
 
     case TOGGLE_TODO_COMPLETED:
       const todoIndex = state.todos.findIndex(t => t.id === payload.id)
