@@ -5,12 +5,14 @@ import './App.css';
 
 import store from './store'
 import Alert from './components/layout/Alert'
+import Navbar from './components/layout/Navbar'
 
 const App = () => {
   return (
     <Provider store={store}>
       <Router>
         <Fragment>
+          <Navbar />
           <section className="container">
             <Alert />
           </section>
