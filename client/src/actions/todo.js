@@ -67,6 +67,10 @@ export const editTodo = (formData, id) => async dispatch => {
     if (err.response.status === 500) {
       dispatch(setAlert('Please try again', 'default'))
     }
+
+    dispatch({
+      type: TODOS_ERROR
+    })
   }
 }
 
@@ -82,6 +86,10 @@ export const deleteTodo = id => async dispatch => {
     if (err.response.status === 500) {
       dispatch(setAlert('Something went wrong', 'default'))
     }
+
+    dispatch({
+      type: TODOS_ERROR
+    })
   }
 }
 
