@@ -42,7 +42,7 @@ const TodoForm = ({ addTodo, editTodo, todo: { todo } }) => {
             <input type="text" className="form-control" placeholder="Add Todo..." name="text" value={text} onChange={e => onChange(e)} required />
           </div>
           <div className="form-group">
-            <input type="number" className="form-control" placeholder="Set urgency between 1 - 5" name="urgency" value={urgency} onChange={e => onChange(e)} required />
+            <input type="number" className="form-control" placeholder="Set urgency between 1 - 5" name="urgency" value={urgency} onChange={e => onChange(e)} required min="1" max="5" />
           </div>
 
           <input type="submit" className="btn btn-primary mr-2" value="Submit" />
