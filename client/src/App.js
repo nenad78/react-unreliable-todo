@@ -6,6 +6,7 @@ import './App.css';
 import store from './store'
 import Alert from './components/layout/Alert'
 import Navbar from './components/layout/Navbar'
+import Landing from './components/layout/Landing'
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Router>
         <Fragment>
           <Navbar />
+          <Route exact path="/" component={Landing} />
           <section className="container">
             <Alert />
           </section>
