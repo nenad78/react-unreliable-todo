@@ -8,7 +8,18 @@ import Alert from './components/layout/Alert'
 import Navbar from './components/layout/Navbar'
 import Landing from './components/layout/Landing'
 
+import { loadSession } from './actions/session'
+import setSessionId from './utils/setSession'
+
+if (localStorage.sessionid) {
+  setSessionId(localStorage.sessionid)
+}
+
 const App = () => {
+  useEffect(() => {
+    store.dispatch(loadSession())
+  }, [])
+
   return (
     <Provider store={store}>
       <Router>
