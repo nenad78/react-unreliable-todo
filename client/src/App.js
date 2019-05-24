@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { Fragment, useEffect } from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Provider } from 'react-redux'
 import './App.css';
 
-function App() {
+import store from './store'
+
+const App = () => {
   return (
-    <div className="App">
-      <h1>Anica</h1>
-    </div>
-  );
+    <Provider store={store}>
+    
+    </Provider>
+  )
 }
 
 export default App;
